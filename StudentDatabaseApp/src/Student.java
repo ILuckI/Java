@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Student {
     private String firstName;
     private String lastName;
-    private String year = "Junior";
     private String courses;
     private String studentID;
     private int balance;
@@ -17,7 +16,6 @@ public class Student {
         this.firstName = scanner.nextLine();
         System.out.println("Enter student first last name: ");
         this.lastName = scanner.nextLine();
-
         setStudentId();
 
     }
@@ -45,7 +43,6 @@ public class Student {
             }
         } while (1 != 0);
 
-        System.out.println("Enroll: " + courses + "\nCost: " + balance);
     }
     // Pokaz balance
     public void viewBalance(){
@@ -64,5 +61,13 @@ public class Student {
     }
 
     // Pokaz status
+    public String showInfo(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Name: ").append(firstName).append(" ").append(lastName);
+        sb.append("\nStudent ID: ").append(studentID);
+        sb.append("\nCourses Enrolled: ").append(courses);
+        sb.append("\nBalance: ").append(balance);
+        return sb.toString();
+    }
 
 }
